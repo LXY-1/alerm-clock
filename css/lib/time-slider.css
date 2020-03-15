@@ -1,0 +1,195 @@
+ /* 闹钟模态框相关 */
+ .model-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .34);
+    z-index: 999;
+}
+
+.model-menu .model-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 630px;
+    min-width: 320px;
+    height: auto;
+    z-index: 2000;
+    transform: translateX(-50%) translateY(-50%) perspective(900px) translateZ(-450px) rotateY(90deg);
+    color: #fff;
+    background: #ff0080;
+    border-radius: 5px;
+    transition: .5s;
+    animation: none 2s ease-in-out forwards;
+    opacity: 0;
+
+}
+
+@keyframes showFade {
+    50% {
+        transform: translateX(-50%) translateY(-50%) perspective(900px) translateZ(-250px) rotateY(89deg);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translateX(-50%) translateY(-50%) perspective(900px) translateZ(0px) rotateY(-10deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) perspective(900px) translateZ(0px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+
+.model-menu .model-content h3 {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0;
+    font-weight: 300;
+    opacity: .8;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.model-menu .model-content .model-body {
+    padding: 15px;
+    width: 80%;
+    margin-left: 10%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+
+.model-menu .model-content .model-body ul {
+    /* float: left; */
+    list-style: none;
+    margin-right: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .5s;
+    position: relative;
+    /* transform: translateY(-108px); */
+}
+
+.model-menu .model-content .model-body ul li {
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.model-menu .model-content .model-body ul .active {
+    color: #7fb80e;
+    position: relative;
+}
+
+.model-menu .model-content .model-body .select-hour .active::before {
+    content: '时';
+    position: absolute;
+    left: 82%;
+    top: 24%;
+    font-size: 14px;
+}
+
+.model-menu .model-content .model-body .select-minute .active::before {
+    content: '分';
+    position: absolute;
+    left: 82%;
+    top: 24%;
+    font-size: 14px;
+}
+
+.model-menu .model-footer .select-rign-tone {
+    height: 52px;
+    width: 100%;
+    /* background-color: #7fb80e; */
+    position: relative;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+.model-menu .model-footer .select-rign-tone:nth-child(1) {
+    border-bottom: 1px solid rgba(0, 0, 0, .35)
+}
+
+.model-menu .model-footer .select-rign-tone h4 {
+    margin-left: 5px;
+}
+
+.model-menu .model-footer .select-rign-tone::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 10px solid #fff;
+    border-color: transparent transparent transparent #fff;
+    transition: .3s;
+}
+
+/* js动态 切换activee class*/
+.model-menu .model-footer .active::before {
+    transform-origin: left;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.model-menu .model-footer .ring-tone-wrap {
+    transition: .5s;
+    height: 0;
+    overflow: hidden;
+}
+
+.model-menu .model-footer .ring-tone-wrap ul {
+    list-style: none;
+
+}
+
+.model-menu .model-footer .ring-tone-wrap ul li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-left: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.model-menu .model-footer .gradient-btn-wrap button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    width: 110px;
+    height: 45px;
+}
+
+/* .select-rign-tone:active +div{
+    transform: scaleY(0);
+    height: 0;
+} */
+/* .model-menu .model-footer .ring-tone-wrap ul{
+    transform: scaleY(0);
+} */
+.model-menu .model-footer .ring-tone-wrap ul li span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+
+.model-menu .model-footer .ring-tone-wrap ul li .active {
+    background: #7fb80e;
+}

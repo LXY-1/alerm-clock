@@ -1,0 +1,190 @@
+.clock-wrap {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(to right, #f1c40f, #e67e22, #e74c3c);
+    border-radius: 50%;
+    position: relative;
+    transition: .5s;
+    animation: none .5s ease-in infinite;
+}
+
+.clock-wrap::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #2c3e50;
+
+}
+
+/* 闹钟动画样式 */
+@keyframes clockMove {
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px #f1c40f;
+    }
+}
+
+
+.clock-wrap .line {
+    width: 80%;
+    height: 80%;
+    /* background: #505253; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.clock-wrap .line>div {
+    width: 8px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+/* 注意使用transfrom的translate实现居中，下面不要把transrom覆盖了 */
+.clock-wrap .line div:nth-child(1) {
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.clock-wrap .line div:nth-child(2) {
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.clock-wrap .line div:nth-child(3) {
+    transform: translateX(-50%) rotate(60deg);
+}
+
+.clock-wrap .line div:nth-child(4) {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.clock-wrap .line div:nth-child(5) {
+    transform: translateX(-50%) rotate(120deg);
+}
+
+.clock-wrap .line div:nth-child(6) {
+    transform: translateX(-50%) rotate(150deg);
+}
+
+.clock-wrap .line::before {
+    content: '';
+    width: 90%;
+    height: 90%;
+    background: #2c3e50;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.clock-wrap .line::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+}
+
+.clock-wrap .hour,
+.clock-wrap .minute,
+.clock-wrap .second {
+    position: absolute;
+    width: 5px;
+    height: 14%;
+    bottom: 50%;
+    background: #fff;
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: bottom;
+}
+
+.clock-wrap .hour {
+    animation: hourMove 43200s linear infinite;
+}
+
+.clock-wrap .minute {
+    width: 3px;
+    height: 23%;
+    transform: translate(-50%, 0);
+    animation: minuteMove 3600s linear infinite;
+}
+
+.clock-wrap .second {
+    width: 1px;
+    height: 35%;
+    transform: translate(-50%, 0);
+    transition: 5s;
+    animation: secondMove 60s linear infinite;
+}
+
+/*当前第一次转到了360deg后切换这个动画 */
+@keyframes secondMove1 {
+    0% {
+        transform: translate(-50%, 0) rotate(0deg)
+    }
+
+    100% {
+        transform: translate(-50%, 0) rotate(360deg)
+    }
+}
+
+@keyframes secondMove {
+    100% {
+        transform: translate(-50%, 0) rotate(360deg)
+    }
+}
+
+/*当前第一次转到了360deg后切换这个动画 */
+@keyframes minuteMove1 {
+    0% {
+        transform: translate(-50%, 0) rotate(0deg)
+    }
+
+    100% {
+        transform: translate(-50%, 0) rotate(360deg)
+    }
+}
+
+@keyframes minuteMove {
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
+
+/*当前第一次转到了360deg后切换这个动画 */
+@keyframes hourMove1 {
+    0% {
+        transform: translate(-50%, 0) rotate(0deg)
+    }
+
+    100% {
+        transform: translate(-50%, 0) rotate(360deg)
+    }
+}
+
+@keyframes hourMove {
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
+

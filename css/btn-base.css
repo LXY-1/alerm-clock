@@ -1,0 +1,55 @@
+.btn-border {
+  outline: none;
+  border: none;
+}
+.btn-position-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.font-style {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+.btn-bg-success {
+  background-color: #6eb46e;
+  background-image: linear-gradient(to right, #6eb46e 10%, #55b455);
+  border-radius: 40px;
+  opacity: 0.8s;
+  cursor: pointer;
+}
+.btn-bg-ifno {
+  background-color: #a18cd1;
+  background-image: linear-gradient(to right, #a18cd1, #fbc2eb, #a18cd1);
+  cursor: pointer;
+}
+.btn-bg-primary {
+  background-color: #43e97b;
+  background-image: linear-gradient(to right, #43e97b, #38f9d7, #43e97b);
+  cursor: pointer;
+}
+.btn-bg-wran {
+  background-color: #fa709a;
+  background-image: linear-gradient(to right, #fa709a, #fee140, #fa709a);
+  cursor: pointer;
+}
+.btn-bg-default {
+  background-color: #4481eb;
+  background-image: linear-gradient(to right, #4481eb, #04befe, #4481eb);
+  cursor: pointer;
+}
+.btn-bg-1 {
+  background-color: #ffe29f;
+  background-image: linear-gradient(to right, #ffe29f, #ffa99f, #ffe29f);
+  cursor: pointer;
+}
+.btn-bg-2 {
+  background-color: #fdfc47;
+  background-image: linear-gradient(to right, #fdfc47, #24fe41, #fdfc47);
+  cursor: pointer;
+}
+.btn-hover-success {
+  box-shadow: 0 0 10px #b4ffb4;
+}

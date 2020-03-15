@@ -1,0 +1,64 @@
+// 背景颜色渐变动态按钮
+@import (reference) "./btn-base.less";
+
+.gradient-btn-wrap button{
+    .btn-border;
+    width: @btn-width;
+    height: @btn-height;
+    // 按钮内部字体样式
+    .font-style;
+    //每个按钮的背景以及动态效果:利用background-size还有backgound-position背景移动实现
+    transition: all .5s;
+    background-size: 200%;
+    position: relative;
+    &:hover{
+        background-position-x: 100%;
+        transform: translateY(-15px);
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, .2);
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        height: 4px;
+        filter: blur(5px);//模糊
+        background: rgba(255 , 255, 255, .2);
+        border-radius: 50%;
+        transform: scale(0);
+        transition: .5s;
+        z-index: -1;
+    }
+    &:hover::before{
+        transform: scale(1);
+        bottom: -15px;
+    }
+    &:nth-child(1){
+        .btn-bg-ifno;
+    }
+    &:nth-child(2){
+        .btn-bg-primary;
+    }
+    &:nth-child(3){
+        .btn-bg-wran;
+    }
+    &:nth-child(4){
+        .btn-bg-default;
+    }
+    &:nth-child(5){
+        .btn-bg-1
+    }
+    &:nth-child(6){
+        .btn-bg-2;
+    }
+}
+

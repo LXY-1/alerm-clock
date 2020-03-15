@@ -1,0 +1,84 @@
+// 基础的一些按钮样式
+@btn-success-bg: linear-gradient(to right, #6eb46e 10%, #55b455);
+@btn-info-bg: linear-gradient(to right, #a18cd1,#fbc2eb,#a18cd1);
+@btn-primary-bg:linear-gradient(to right, #43e97b,#38f9d7,#43e97b);
+@btn-wran-bg:linear-gradient(to right, #fa709a,#fee140,#fa709a);
+@btn-default-bg:linear-gradient(to right, #4481eb,#04befe,#4481eb);
+// 暂时这样命名了，
+@btn-1-bg:linear-gradient(to right, #ffe29f,#ffa99f,#ffe29f);
+@btn-2-bg:linear-gradient(to right, #fdfc47,#24fe41,#fdfc47);
+// 炫彩流光按钮背景样式
+
+
+// 不兼容渐变的浏览器显示的背景颜色
+@btn-success-not-bg: #6eb46e;
+@btn-info-not-bg: #a18cd1;
+@btn-primary-not-bg: #43e97b;
+@btn-warn-not-bg: #fa709a;
+@btn-default-not-bg: #4481eb;
+@btn-1-not-bg: #ffe29f;
+@btn-2-not-bg: #fdfc47;
+
+@btn-width: 180px;
+@btn-height: 60px;
+.btn-border{
+    outline: none;
+    border: none;
+}
+//按钮定位，如果是封装的按钮组件，处理的时候不一定需要定位的这段css代码，所以也把它抽离出来
+.btn-position-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+// 按钮内部文字样式
+.font-style{
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+// 按钮的背景样式，也是需要分模块抽离，方便修改
+.btn-bg-success{
+  background-color: @btn-success-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-success-bg;
+  border-radius: 40px;
+  opacity: .8s;
+  cursor: pointer;
+}
+.btn-bg-ifno{
+  background-color: @btn-info-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-info-bg;
+  cursor: pointer;
+}
+.btn-bg-primary{
+  background-color: @btn-primary-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-primary-bg;
+  cursor: pointer;
+}
+.btn-bg-wran{
+  background-color: @btn-warn-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-wran-bg;
+  cursor: pointer;
+}
+.btn-bg-default{
+  background-color: @btn-default-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-default-bg;
+  cursor: pointer;
+}
+.btn-bg-1{
+  background-color: @btn-1-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-1-bg;
+  cursor: pointer;
+}
+.btn-bg-2{
+  background-color: @btn-2-not-bg;//不兼容颜色渐变浏览器使用
+  background-image: @btn-2-bg;
+  cursor: pointer;
+}
+
+// 按钮hover样式
+.btn-hover-success{
+    box-shadow: 0 0 10px #b4ffb4;
+}
